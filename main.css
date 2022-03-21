@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+:root {
+  --clr-moderate-violet: hsl(263, 55%, 52%);
+  --clr-dark-grayish-blue: hsl(217, 19%, 35%);
+  --clr-blackish-blue: hsl(219, 29%, 14%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-light-gray: hsl(0, 0%, 81%);
+  --clr-light-grayish-blue: hsl(210, 46%, 95%);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 13px;
+}
+.wrapper {
+  background-color: hsl(0, 0%, 81%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.card {
+  border-radius: 5px;
+  padding: 2rem;
+}
+blockquote strong {
+  font-size: 1.3rem;
+}
+blockquote p {
+  font-size: 1rem;
+}
+.card:first-child {
+  background: url("images/bg-pattern-quotation.svg") var(--clr-moderate-violet);
+  background-repeat: no-repeat;
+  background-position: top right, center;
+  color: white;
+}
+.card:first-child .card-description .title p:last-child {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.card:first-child > blockquote p {
+  color: rgba(255, 255, 255, 0.7);
+}
+.card:first-child .card-description img {
+  border: 2px solid var(--clr-light-gray);
+}
+.card:nth-child(2) {
+  background-color: var(--clr-dark-grayish-blue);
+  color: white;
+}
+.card:nth-child(2) .card-description .title p:last-child {
+  color: rgba(255, 255, 255, 0.5);
+}
+.card:nth-child(2) > blockquote p {
+  color: rgba(255, 255, 255, 0.7);
+}
+.card:nth-child(2) .card-description img {
+  border: 2px solid var(--clr-light-gray);
+}
+.card:nth-child(3) {
+  background-color: var(--clr-white);
+  color: black;
+}
+.card:nth-child(3) .card-description .title p:last-child {
+  color: rgba(0, 0, 0, 0.5);
+}
+.card:nth-child(3) > blockquote p {
+  color: rgba(0, 0, 0, 0.7);
+}
+.card:nth-child(4) {
+  background-color: var(--clr-blackish-blue);
+  color: white;
+}
+.card:nth-child(4) .card-description .title p:last-child {
+  color: rgba(255, 255, 255, 0.5);
+}
+.card:nth-child(4) > blockquote p {
+  color: rgba(255, 255, 255, 0.7);
+}
+.card:nth-child(4) .card-description img {
+  border: 2px solid var(--clr-moderate-violet);
+}
+.card:last-child {
+  background-color: hsl(0, 0%, 100%);
+  color: black;
+}
+.card:last-child .card-description .title p:last-child {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.card:last-child > blockquote p {
+  color: rgba(0, 0, 0, 0.7);
+}
+.card-description {
+  display: flex;
+  gap: 1rem;
+}
+.card-description img {
+  border-radius: 50%;
+  width: 2rem;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+}
+.card blockquote,
+.card blockquote p {
+  margin-top: 1rem;
+}
+@media (min-width: 809px) {
+  .container {
+    margin: 0 6rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "card1 card1 card2 card3"
+      "card4 card5 card5 card3";
+  }
+  .card:first-child {
+    grid-area: card1;
+    background-position: top right 5rem, center;
+  }
+  .card:nth-child(2) {
+    grid-area: card2;
+  }
+  .card:nth-child(3) {
+    grid-area: card4;
+  }
+  .card:nth-child(4) {
+    grid-area: card5;
+  }
+  .card:last-child {
+    grid-area: card3;
+  }
+}
